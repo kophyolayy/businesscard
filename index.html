@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Han Thu Phyo - Digital Business Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --colgate-red: #D6001C;
+      --colgate-dark: #a40012;
+      --border-radius: 20px;
+      --transition: 0.18s cubic-bezier(.4,0,.2,1);
+    }
+    body {
+      background: #f8f9fb;
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: #fff;
+      max-width: 390px;
+      width: 99%;
+      border-radius: var(--border-radius);
+      box-shadow: 0 6px 32px rgba(214,0,28,0.10);
+      padding: 2.4em 1.5em 2em 1.5em;
+      text-align: center;
+      border-top: 9px solid var(--colgate-red);
+      position: relative;
+    }
+    .logo {
+      width: 114px;
+      margin-bottom: 1.2em;
+      margin-top: -56px;
+      background: white;
+      border-radius: 12px;
+      display: inline-block;
+      box-shadow: 0 2px 10px rgba(88,0,14,0.045);
+      border: 3.5px solid #fff;
+      position: relative;
+      top: -32px;
+      object-fit: contain;
+      object-position: center;
+    }
+    h2 {
+      margin: 0 0 0.12em 0;
+      font-size: 1.4em;
+      color: var(--colgate-red);
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .role {
+      color: #7e151e;
+      font-size: 1em;
+      margin-bottom: 0.4em;
+      letter-spacing: 0.01em;
+      font-weight: 500;
+    }
+    .company {
+      font-size: 1.07em;
+      color: var(--colgate-red);
+      margin-bottom: 0.7em;
+      font-weight: 600;
+    }
+    .contact-info {
+      font-size: 1em;
+      color: #272727;
+      margin-bottom: 1.15em;
+      line-height: 1.6;
+      text-align: left;
+      padding-left: 0.8em;
+    }
+    .contact-info strong {
+      color: var(--colgate-red);
+      width: 74px;
+      display: inline-block;
+      font-weight: 600;
+    }
+    .address {
+      color: #757575;
+      font-size: 0.99em;
+      margin-bottom: 1.5em;
+      text-align: left;
+      padding-left: 0.8em;
+      line-height: 1.6;
+    }
+    .address strong { color: var(--colgate-red); font-weight: 600; }
+    .btn {
+      display: inline-block;
+      padding: 13px 32px 13px 32px;
+      background: var(--colgate-red);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.12em;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      box-shadow: 0 1px 7px rgba(214,0,28,0.10);
+      transition: background var(--transition);
+      cursor: pointer;
+    }
+    .btn:hover, .btn:focus {
+      background: var(--colgate-dark);
+    }
+    @media (max-width: 545px) {
+      .card { padding: 1.3em 0.3em 1em 0.3em; }
+      h2 { font-size: 1.09em; }
+      .logo { width: 82px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="logo" src="https://1000logos.net/wp-content/uploads/2016/12/Colgate-logo.jpg" alt="Colgate Logo">
+    <h2>Han Thu Phyo</h2>
+    <div class="role">Maintenance Planner</div>
+    <div class="company">Colgate-Palmolive Myanmar LTD</div>
+    <div class="contact-info">
+      <div><strong>Phone:</strong> +959777128350</div>
+      <div><strong>Email:</strong> han_thu_phyo@colpal.com</div>
+    </div>
+    <div class="address">
+      <strong>Address:</strong><br>
+      Plot No.97 &amp; 101, Cherry street,<br>
+      Shwe Pyi Thar Industrial Zone (1),<br>
+      Shwe Pyi Thar Township,<br>
+      Yangon, Myanmar
+    </div>
+    <a href="https://yourgithubusername.github.io/your-repo/han_thu_phyo.vcf" download class="btn">
+      &#x1F4C1; Add Contact
+    </a>
+  </div>
+</body>
+</html>
