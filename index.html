@@ -7,71 +7,110 @@
   <style>
     :root {
       --colgate-red: #D6001C;
-      --colgate-dark: #a40012;
-      --border-radius: 20px;
+      --dna-blue: #2396fc;
+      --dna-gradient: linear-gradient(92deg, #2396fc 0%, #33e5bb 100%);
+      --border-radius: 22px;
       --transition: 0.18s cubic-bezier(.4,0,.2,1);
     }
     body {
-      background: #f8f9fb;
+      background: #eef3f8;
       font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+      margin: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
     }
     .card {
       background: #fff;
-      max-width: 390px;
-      width: 99%;
+      max-width: 410px;
+      width: 97%;
+      box-shadow: 0 8px 36px rgba(40, 80, 163, 0.10);
       border-radius: var(--border-radius);
-      box-shadow: 0 6px 32px rgba(214,0,28,0.10);
-      padding: 2.4em 1.5em 2em 1.5em;
+      padding: 2.5em 1.7em 2em 1.7em;
       text-align: center;
-      border-top: 9px solid var(--colgate-red);
+      border-top: 10px solid var(--colgate-red);
+      border-bottom: 6px solid #2396fc;
       position: relative;
+      overflow: hidden;
+    }
+    .card::after {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 0;
+      bottom: -38px;
+      left: -14px;
+      width: 90%;
+      height: 70px;
+      border-radius: 52% 38% 80% 100%;
+      background: var(--dna-gradient);
+      opacity: 0.16;
+      pointer-events: none;
     }
     .logo {
-      width: 114px;
+      width: 112px;
       margin-bottom: 1.2em;
-      margin-top: -56px;
+      margin-top: -60px;
       background: white;
-      border-radius: 12px;
+      border-radius: 16px;
       display: inline-block;
-      box-shadow: 0 2px 10px rgba(88,0,14,0.045);
+      box-shadow: 0 2px 10px rgba(40, 150, 252, 0.05);
       border: 3.5px solid #fff;
       position: relative;
       top: -32px;
       object-fit: contain;
       object-position: center;
+      z-index: 2;
     }
     h2 {
-      margin: 0 0 0.12em 0;
-      font-size: 1.4em;
+      margin: 0 0 4px 0;
+      font-size: 1.38em;
       color: var(--colgate-red);
       font-weight: 700;
       letter-spacing: 0.3px;
+      z-index: 2;
+      position: relative;
     }
     .role {
-      color: #7e151e;
+      color: #1b6ab4;
       font-size: 1em;
-      margin-bottom: 0.4em;
-      letter-spacing: 0.01em;
+      margin-bottom: 0.5em;
       font-weight: 500;
+      z-index: 2;
+      position: relative;
     }
     .company {
-      font-size: 1.07em;
+      font-size: 1.06em;
       color: var(--colgate-red);
-      margin-bottom: 0.7em;
+      margin-bottom: 0.5em;
       font-weight: 600;
+      z-index: 2;
+      position: relative;
+    }
+    .team {
+      background: var(--dna-gradient);
+      color: #fff;
+      padding: 0.35em 1.2em;
+      border-radius: 1em;
+      font-size: 0.97em;
+      display: inline-block;
+      margin-bottom: 1em;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 6px rgba(35,150,252,0.10);
+      z-index: 2;
+      position: relative;
     }
     .contact-info {
       font-size: 1em;
       color: #272727;
-      margin-bottom: 1.15em;
+      margin-bottom: 1em;
       line-height: 1.6;
       text-align: left;
       padding-left: 0.8em;
+      z-index: 2;
+      position: relative;
     }
     .contact-info strong {
       color: var(--colgate-red);
@@ -81,17 +120,19 @@
     }
     .address {
       color: #757575;
-      font-size: 0.99em;
-      margin-bottom: 1.5em;
+      font-size: 0.97em;
+      margin-bottom: 1.4em;
       text-align: left;
       padding-left: 0.8em;
-      line-height: 1.6;
+      line-height: 1.55;
+      z-index: 2;
+      position: relative;
     }
     .address strong { color: var(--colgate-red); font-weight: 600; }
     .btn {
       display: inline-block;
       padding: 13px 32px 13px 32px;
-      background: var(--colgate-red);
+      background: var(--dna-gradient);
       color: #fff;
       border: none;
       border-radius: 8px;
@@ -99,17 +140,25 @@
       text-decoration: none;
       font-weight: 700;
       letter-spacing: 0.02em;
-      box-shadow: 0 1px 7px rgba(214,0,28,0.10);
-      transition: background var(--transition);
+      box-shadow: 0 1px 7px rgba(35,150,252,0.14);
+      transition: background var(--transition), box-shadow var(--transition);
       cursor: pointer;
+      z-index: 2;
+      position: relative;
     }
     .btn:hover, .btn:focus {
-      background: var(--colgate-dark);
+      filter: brightness(1.13);
+      box-shadow: 0 4px 18px rgba(35,150,252,0.24);
+    }
+    .data-icon {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 7px;
     }
     @media (max-width: 545px) {
-      .card { padding: 1.3em 0.3em 1em 0.3em; }
+      .card { padding: 1.3em 0.1em 1em 0.1em; }
       h2 { font-size: 1.09em; }
-      .logo { width: 82px; }
+      .logo { width: 80px; }
     }
   </style>
 </head>
@@ -119,6 +168,9 @@
     <h2>Han Thu Phyo</h2>
     <div class="role">Maintenance Planner</div>
     <div class="company">Colgate-Palmolive Myanmar LTD</div>
+    <span class="team">Digital &amp; Analysis Team 
+      <svg class="data-icon" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="10" stroke="#2396fc" stroke-width="2"/><path d="M6.5 13.5L10 10l3 3 4-6" stroke="#33e5bb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
     <div class="contact-info">
       <div><strong>Phone:</strong> +959777128350</div>
       <div><strong>Email:</strong> han_thu_phyo@colpal.com</div>
@@ -130,7 +182,7 @@
       Shwe Pyi Thar Township,<br>
       Yangon, Myanmar
     </div>
-    <a href="https://yourgithubusername.github.io/your-repo/han_thu_phyo.vcf" download class="btn">
+    <a href="https://kophyolayy.github.io/businesscard/han_thu_phyo.vcf" download class="btn">
       &#x1F4C1; Add Contact
     </a>
   </div>
